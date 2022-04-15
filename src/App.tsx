@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Pad from "./components/Pad";
+import Volume from "./components/Volume";
+import VolumeContext from "./contexts/VolumeContext";
+import { IAudioClips } from "./interface/Interface";
+import AudioClips from "./resources/AudioClips";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h2>Drum Machine</h2>
+      <div className="mini-container">
+        {AudioClips.map(({ keyTrigger, url }: IAudioClips) => (
+          <VolumeContext.Provider value={{ volume: 1 }}>
+            <Pad key={Math.random()} keyTrigger={keyTrigger} url={url} />
+          </VolumeContext.Provider>
+        ))}
+      </div>
+      <Volume />
     </div>
   );
 }
