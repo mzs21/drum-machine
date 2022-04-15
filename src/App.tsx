@@ -9,11 +9,11 @@ function App() {
     <div className="container">
       <h2>Drum Machine</h2>
       <div className="mini-container">
-        {AudioClips.map(({ keyTrigger, url }: IAudioClips) => (
-          <VolumeContext.Provider value={{ volume: 1 }}>
+        <VolumeContext.Provider value={{ volume: 1 }}>
+          {AudioClips.map(({ keyTrigger, url }: IAudioClips) => (
             <Pad key={Math.random()} keyTrigger={keyTrigger} url={url} />
-          </VolumeContext.Provider>
-        ))}
+          ))}
+        </VolumeContext.Provider>
       </div>
       <Volume />
     </div>
