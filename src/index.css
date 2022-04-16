@@ -15,6 +15,16 @@
   h2 {
     @apply text-4xl antialiased text-center font-black;
   }
+
+  input{
+    @apply w-full h-2 bg-sky-200 appearance-none rounded-lg;
+  }
+
+  footer {
+    @apply bg-white py-3 flex justify-center space-x-2 hover:space-x-4 fixed left-0 right-0 bottom-0;
+  }
+
+
 }
 
 @layer components {
@@ -28,5 +38,13 @@
 
   .volume {
     @apply grid place-items-center gap-4;
+  }
+
+  .github {
+    @apply w-8 h-8 hover:scale-150;
+  }
+
+  .linkedIn {
+    @apply w-8 h-8 hover:scale-150;
   }
 }

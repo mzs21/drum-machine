@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Footer from "./components/Footer";
 import Pad from "./components/Pad";
 import Volume from "./components/Volume";
 import VolumeContext from "./contexts/VolumeContext";
@@ -23,6 +24,7 @@ function App() {
         </div>
         <Volume />
       </VolumeContext.Provider>
+      <Footer/>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import VolumeContext from "../contexts/VolumeContext";
-import { IAudioClips } from "../Interface";
+import { IAudioClips } from "../interface/Interface";
+
 
 const Pad = ({ url, keyTrigger }: IAudioClips) => {
   const { volume } = useContext(VolumeContext); // Using the VolumeContext for 'volume'
