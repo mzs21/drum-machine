@@ -1,10 +1,8 @@
-import { useState } from "react";
+import { useContext } from "react";
+import VolumeContext from "../contexts/VolumeContext";
 
 const Volume = () => {
-  const [volume, setVolume] = useState<number>(1);
-
-  const setVolumeHandler = (event: React.ChangeEvent<HTMLInputElement>) =>
-    setVolume(parseFloat(event.target.value));
+  const { volume, setVolumeHandler } = useContext(VolumeContext);
 
   return (
     <div className="volume">
@@ -13,8 +11,8 @@ const Volume = () => {
         type="range"
         onChange={setVolumeHandler}
         value={volume}
-        min="1"
-        max="10"
+        min="0"
+        max="1"
         step="0.01"
       />
     </div>

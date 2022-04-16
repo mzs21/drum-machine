@@ -5,4 +5,5 @@ export interface IAudioClips {
 
 export interface IVolume {
   volume: number;
+  setVolumeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }

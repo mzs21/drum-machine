@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import VolumeContext from "../contexts/VolumeContext";
-import { IAudioClips } from "../interface/Interface";
+import { IAudioClips } from "../Interface";
 
 const Pad = ({ url, keyTrigger }: IAudioClips) => {
-  const { volume } = React.useContext(VolumeContext); // Using the VolumeContext for 'volume'
+  const { volume } = useContext(VolumeContext); // Using the VolumeContext for 'volume'
 
   const [active, setActive] = useState<boolean>(false); // To check which button is active
 
@@ -20,7 +20,7 @@ const Pad = ({ url, keyTrigger }: IAudioClips) => {
     transition();
     audioTag.current.currentTime = 0;
     audioTag.current.play();
-    audioTag.current.volume = volume;
+    audioTag.current.volume = volume / 10;
   }, [volume]);
 
   useEffect(() => {
